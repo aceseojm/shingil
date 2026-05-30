@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap');
+@import "tailwindcss";
+
+:root {
+  --navy: #0F1C2E;
+  --gold: #C9A96E;
+  --teal: #4ECDC4;
+  --bg: #F8F6F2;
+  --text: #1A1A2E;
+  --muted: #6B7280;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 헤드라인 */
+.font-display {
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: -0.03em;
+}
+
+/* 섹션 타이틀 */
+.font-section {
+  font-family: 'DM Sans', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.font-body {
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* Selection */
+::selection {
+  background: var(--gold);
+  color: var(--navy);
+}
