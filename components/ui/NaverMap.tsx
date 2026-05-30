@@ -2,7 +2,7 @@ export default function NaverMap() {
   return (
     <div className="w-full rounded-xl overflow-hidden" style={{ height: "450px" }}>
       <iframe
-        src="https://maps.google.com/maps?q=37.32205,126.84180&z=16&output=embed&hl=ko"
+        src="https://maps.google.com/maps?q=경기도+안산시+단원구+신길동+1379&z=17&output=embed&hl=ko"
         width="100%"
         height="100%"
         style={{ border: 0 }}
