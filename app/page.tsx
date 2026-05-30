@@ -91,7 +91,7 @@ export default function HomePage() {
               href="/overview"
               className="px-8 py-4 bg-[#C9A96E] text-[#0F1C2E] font-body text-sm font-bold tracking-widest uppercase hover:bg-white transition-colors"
             >
-              프로젝트 보기 →
+              프로젝트 보기
             </Link>
             <Link
               href="/conclusion"

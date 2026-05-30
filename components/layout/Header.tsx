@@ -64,12 +64,12 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative font-body font-bold text-xs tracking-widest uppercase transition-all duration-200 whitespace-nowrap
+                className={`relative font-body font-extrabold text-xs tracking-widest uppercase transition-all duration-200 whitespace-nowrap
                   after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:bg-[#C9A96E]
                   after:transition-all after:duration-300
                   ${pathname === item.href
                     ? "text-[#C9A96E] after:w-full"
-                    : "text-white/75 hover:text-[#C9A96E] after:w-0 hover:after:w-full"
+                    : "text-white hover:text-[#C9A96E] after:w-0 hover:after:w-full"
                   }`}
               >
                 {item.label}
