@@ -75,12 +75,6 @@ export default function Header() {
                 {item.label}
               </Link>
             ))}
-            <Link
-              href="/conclusion"
-              className="ml-2 px-4 py-2 bg-[#C9A96E] text-[#0F1C2E] font-body font-bold text-xs tracking-widest uppercase hover:bg-white transition-all duration-200 whitespace-nowrap"
-            >
-              투자 문의
-            </Link>
           </nav>
 
           {/* 모바일 햄버거 */}

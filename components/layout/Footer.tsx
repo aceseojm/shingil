@@ -18,7 +18,7 @@ export default function Footer() {
             <p>경기도 안산시 단원구 신길동 일원</p>
             <p>수도권 전철 4호선 신길온천역 직결</p>
             <a href="tel:031-704-2262" className="text-[#C9A96E] hover:text-white transition-colors">T. 031.704.2262</a>
-            <a href="mailto:hunw@naver.com" className="block text-[#C9A96E] hover:text-white transition-colors">E. hunw@naver.com</a>
+            <a href="mailto:contact@sohun-dev.com" className="block text-[#C9A96E] hover:text-white transition-colors">E. contact@sohun-dev.com</a>
           </div>
           <div className="flex flex-col gap-2 text-sm font-body">
             <Link href="/overview" className="hover:text-white transition-colors">Project Overview</Link>

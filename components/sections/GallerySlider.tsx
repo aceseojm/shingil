@@ -6,11 +6,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const slides = [
-  { src: "/images/hero.jpg", label: "Wonder Castle 전체 조감" },
-  { src: "/images/3.jpg",    label: "Master View" },
-  { src: "/images/1.jpg",    label: "Main Tower 야경" },
-  { src: "/images/2.jpg",    label: "Zone A·B·C·D" },
-  { src: "/images/4.jpg",    label: "Site View" },
+  { src: "/images/hero.jpg", label: "Wonder Castle 전체 조감", refNum: null },
+  { src: "/images/3.jpg",    label: "Master View",             refNum: "01" },
+  { src: "/images/1.jpg",    label: "Main Tower 야경",         refNum: "02" },
+  { src: "/images/2.jpg",    label: "Zone A·B·C·D",           refNum: "03" },
+  { src: "/images/4.jpg",    label: "Site View",               refNum: "04" },
 ];
 
 export default function GallerySlider() {
@@ -88,10 +88,15 @@ export default function GallerySlider() {
                   <div className="absolute bottom-4 left-4 right-12">
                     <p className="font-body text-[#C9A96E] text-xs tracking-widest uppercase mb-0.5">
                       조감도 레퍼런스
+                      {slides[current].refNum && (
+                        <span className="ml-2 text-white">{slides[current].refNum}</span>
+                      )}
                     </p>
-                    <p className="font-display font-semibold text-white text-base truncate">
-                      {slides[current].label}
-                    </p>
+                    {!slides[current].refNum && (
+                      <p className="font-display font-semibold text-white text-base truncate">
+                        {slides[current].label}
+                      </p>
+                    )}
                   </div>
                   {/* 카운터 */}
                   <div className="absolute top-3 right-4 font-body text-xs text-white/50 tracking-widest">

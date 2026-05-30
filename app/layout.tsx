@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import StickyCTA from "@/components/ui/StickyCTA";
 
 export const metadata: Metadata = {
   title: "The Wonder Castle — 신길온천 스프링 개발 프로젝트",
@@ -24,6 +25,7 @@ export default function RootLayout({
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
+        <StickyCTA />
       </body>
     </html>
   );

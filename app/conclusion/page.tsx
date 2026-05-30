@@ -140,7 +140,7 @@ export default function ConclusionPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="mailto:hunw@naver.com"
+                  href="mailto:contact@sohun-dev.com"
                   className="px-8 py-4 bg-[#0F1C2E] text-white font-body text-sm tracking-widest uppercase hover:bg-[#C9A96E] hover:text-[#0F1C2E] transition-all"
                 >
                   투자 문의하기
@@ -176,8 +176,8 @@ export default function ConclusionPage() {
                   <Mail size={20} className="text-[#C9A96E] flex-shrink-0 mt-1" />
                   <div>
                     <p className="font-body text-xs text-[#C9A96E] tracking-widest mb-1">EMAIL</p>
-                    <a href="mailto:hunw@naver.com" className="font-body text-white/80 text-sm hover:text-[#C9A96E] transition-colors">
-                      hunw@naver.com
+                    <a href="mailto:contact@sohun-dev.com" className="font-body text-white/80 text-sm hover:text-[#C9A96E] transition-colors">
+                      contact@sohun-dev.com
                     </a>
                   </div>
                 </div>

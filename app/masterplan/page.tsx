@@ -4,6 +4,7 @@ import { useState } from "react";
 import SectionHero from "@/components/ui/SectionHero";
 import FadeUp from "@/components/ui/FadeUp";
 import PageNav from "@/components/ui/PageNav";
+import Masterplan3D from "@/components/ui/Masterplan3D";
 
 const clusters = [
   {
@@ -133,128 +134,10 @@ export default function MasterplanPage() {
 
           <div className="flex flex-col lg:flex-row gap-8">
 
-            {/* ── SVG 다이어그램 ── */}
+            {/* ── 3D 와이어프레임 다이어그램 ── */}
             <FadeUp className="lg:w-1/2">
-              <div className="bg-[#0F1C2E] rounded-2xl p-5 w-full">
-                <svg viewBox="0 0 560 410" className="w-full" style={{ fontFamily: "DM Sans, sans-serif" }}>
-
-                  {/* ── 지면 ── */}
-                  <line x1="8" y1="385" x2="552" y2="385" stroke="#ffffff20" strokeWidth="1" />
-
-                  {/* ══════════════════════════════
-                      ZONE A  좌측 주상복합 50F ×3
-                  ══════════════════════════════ */}
-                  <g onClick={() => setActive("A")} style={{ cursor: "pointer" }}>
-                    {/* 라벨 */}
-                    <text x="88" y="80" fill={active === "A" ? "#C9A96E" : "#C9A96E88"} fontSize="9" textAnchor="middle" fontWeight="bold">ZONE A</text>
-                    <text x="88" y="92" fill="#ffffff44" fontSize="7.5" textAnchor="middle">주상복합 50F</text>
-                    {/* 타워 1 */}
-                    <rect x="12" y="100" width="46" height="285" rx="3"
-                      fill={active === "A" ? "#C9A96E55" : "#C9A96E1A"} stroke="#C9A96E" strokeWidth={active === "A" ? "2" : "1.5"} />
-                    {/* 타워 2 */}
-                    <rect x="64" y="114" width="46" height="271" rx="3"
-                      fill={active === "A" ? "#C9A96E55" : "#C9A96E15"} stroke="#C9A96E" strokeWidth={active === "A" ? "2" : "1.5"} />
-                    {/* 타워 3 */}
-                    <rect x="116" y="128" width="46" height="257" rx="3"
-                      fill={active === "A" ? "#C9A96E55" : "#C9A96E12"} stroke="#C9A96E" strokeWidth={active === "A" ? "2" : "1.5"} />
-                    {/* 포디움 */}
-                    <rect x="8" y="355" width="160" height="30" rx="3"
-                      fill={active === "A" ? "#C9A96E33" : "#C9A96E20"} stroke="#C9A96E" strokeWidth="1" />
-                  </g>
-
-                  {/* ══════════════════════════════
-                      ZONE B  50층 Twin Tower
-                  ══════════════════════════════ */}
-                  <g onClick={() => setActive("B")} style={{ cursor: "pointer" }}>
-                    {/* 라벨 */}
-                    <text x="228" y="68" fill={active === "B" ? "#4ECDC4" : "#4ECDC488"} fontSize="9" textAnchor="middle" fontWeight="bold">ZONE B</text>
-                    <text x="228" y="80" fill="#ffffff44" fontSize="7.5" textAnchor="middle">50F Twin Tower</text>
-                    {/* Twin Tower Left */}
-                    <rect x="183" y="88" width="52" height="267" rx="3"
-                      fill={active === "B" ? "#4ECDC455" : "#4ECDC420"} stroke="#4ECDC4" strokeWidth={active === "B" ? "2.5" : "1.5"} />
-                    {/* Twin Tower Right */}
-                    <rect x="246" y="88" width="52" height="267" rx="3"
-                      fill={active === "B" ? "#4ECDC455" : "#4ECDC420"} stroke="#4ECDC4" strokeWidth={active === "B" ? "2.5" : "1.5"} />
-                    {/* 스카이브릿지 */}
-                    <rect x="183" y="116" width="115" height="13" rx="2"
-                      fill={active === "B" ? "#4ECDC4" : "#4ECDC444"} stroke="#4ECDC4" strokeWidth="1" />
-                    {/* 아쿠아 포디움 */}
-                    <rect x="175" y="355" width="132" height="30" rx="3"
-                      fill={active === "B" ? "#4ECDC433" : "#4ECDC418"} stroke="#4ECDC4" strokeWidth="1" />
-                    {/* 워터폴 점선 */}
-                    {[208, 228, 248, 268, 288].map((x) => (
-                      <line key={x} x1={x} y1="355" x2={x} y2="385"
-                        stroke="#4ECDC466" strokeWidth="1.5" strokeDasharray="3,3" />
-                    ))}
-                  </g>
-
-                  {/* ══════════════════════════════
-                      신길온천 역사 30층  (독립 건물)
-                  ══════════════════════════════ */}
-                  <g onClick={() => setActive("B")} style={{ cursor: "pointer" }}>
-                    {/* 역사 건물 30F */}
-                    <rect x="313" y="223" width="58" height="162" rx="3"
-                      fill={active === "B" ? "#4ECDC433" : "#4ECDC415"} stroke="#4ECDC4" strokeWidth="1.5" strokeDasharray={active === "B" ? "none" : "0"} />
-                    {/* 연결 브릿지 (역사 ↔ 트윈타워) */}
-                    <rect x="298" y="260" width="17" height="8" rx="1"
-                      fill="#4ECDC433" stroke="#4ECDC4" strokeWidth="1" />
-                    {/* 라벨 배경 */}
-                    <rect x="308" y="200" width="72" height="24" rx="3"
-                      fill="#0F1C2E" stroke="#4ECDC4" strokeWidth="1" />
-                    <text x="344" y="210" fill="#4ECDC4" fontSize="7.5" textAnchor="middle" fontWeight="bold">신길온천 역사</text>
-                    <text x="344" y="221" fill="#ffffff66" fontSize="7" textAnchor="middle">30층</text>
-                  </g>
-
-                  {/* ══════════════════════════════
-                      ZONE D  오피스 타워 20F
-                  ══════════════════════════════ */}
-                  <g onClick={() => setActive("D")} style={{ cursor: "pointer" }}>
-                    {/* 라벨 */}
-                    <text x="392" y="186" fill={active === "D" ? "#4ECDC4" : "#4ECDC488"} fontSize="9" textAnchor="middle" fontWeight="bold">ZONE D</text>
-                    <text x="392" y="197" fill="#ffffff44" fontSize="7.5" textAnchor="middle">오피스 20F</text>
-                    {/* 오피스 타워 */}
-                    <rect x="368" y="203" width="52" height="152" rx="3"
-                      fill={active === "D" ? "#4ECDC455" : "#4ECDC418"} stroke="#4ECDC4" strokeWidth={active === "D" ? "2" : "1.5"} />
-                    {/* 저층부 */}
-                    <rect x="363" y="345" width="62" height="40" rx="2"
-                      fill={active === "D" ? "#4ECDC433" : "#4ECDC415"} stroke="#4ECDC4" strokeWidth="1" />
-                  </g>
-
-                  {/* ══════════════════════════════
-                      ZONE C  10층 + 족욕 공공파크
-                  ══════════════════════════════ */}
-                  <g onClick={() => setActive("C")} style={{ cursor: "pointer" }}>
-                    {/* 라벨 */}
-                    <text x="466" y="290" fill={active === "C" ? "#C9A96E" : "#C9A96E88"} fontSize="9" textAnchor="middle" fontWeight="bold">ZONE C</text>
-                    <text x="466" y="302" fill="#ffffff44" fontSize="7.5" textAnchor="middle">족욕파크 & 스파</text>
-                    {/* 10층 건물 */}
-                    <rect x="432" y="330" width="54" height="55" rx="3"
-                      fill={active === "C" ? "#C9A96E55" : "#C9A96E20"} stroke="#C9A96E" strokeWidth={active === "C" ? "2" : "1.5"} />
-                    {/* 10층 라벨 */}
-                    <text x="459" y="362" fill={active === "C" ? "#C9A96E" : "#C9A96E88"} fontSize="8" textAnchor="middle" fontWeight="bold">10층</text>
-                    {/* 테라스 step 1 */}
-                    <rect x="490" y="348" width="28" height="37" rx="2"
-                      fill={active === "C" ? "#C9A96E44" : "#C9A96E18"} stroke="#C9A96E" strokeWidth="1" />
-                    {/* 테라스 step 2 */}
-                    <rect x="521" y="360" width="22" height="25" rx="2"
-                      fill={active === "C" ? "#C9A96E33" : "#C9A96E14"} stroke="#C9A96E" strokeWidth="1" />
-                    {/* 족욕 물 표시 */}
-                    <ellipse cx="532" cy="383" rx="16" ry="5"
-                      fill="#4ECDC430" stroke="#4ECDC4" strokeWidth="1" />
-                    {/* 공원 라벨 */}
-                    <text x="504" y="378" fill={active === "C" ? "#C9A96E" : "#C9A96E88"} fontSize="7.5" textAnchor="middle" fontWeight="bold">공원</text>
-                  </g>
-
-                  {/* ── 신길온천역 표시 (하단 중앙) ── */}
-                  <rect x="175" y="370" width="138" height="13" rx="2"
-                    fill="#C9A96E22" stroke="#C9A96E88" strokeWidth="1" strokeDasharray="5,3" />
-                  <text x="244" y="379" fill="#C9A96Ecc" fontSize="7.5" textAnchor="middle" fontWeight="bold">신길온천역 (4호선)</text>
-
-                </svg>
-
-                <p className="text-center font-body text-xs text-white/25 mt-2 tracking-widest">
-                  각 Zone을 클릭하면 상세 정보를 볼 수 있습니다
-                </p>
+              <div className="rounded-2xl overflow-hidden w-full">
+                <Masterplan3D active={active} onZoneClick={setActive} />
               </div>
             </FadeUp>
 

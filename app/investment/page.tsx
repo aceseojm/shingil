@@ -15,7 +15,7 @@ const highlights = [
   {
     icon: <Award size={28} className="text-[#C9A96E]" />,
     title: "랜드마크 차별화",
-    desc: "Bio-Dome + 105층 전망 타워의 시각적 아이코닉함. 미디어 노출 및 자연 마케팅 효과로 광고비 절감 + 브랜드 가치 지속 상승.",
+    desc: "50층 Twin 타워와 인피니티 풀의 시각적 아이코닉함. 미디어 노출 및 자연 마케팅 효과로 광고비 절감 + 브랜드 가치 지속 상승.",
   },
   {
     icon: <Calendar size={28} className="text-[#C9A96E]" />,

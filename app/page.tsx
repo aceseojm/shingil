@@ -32,15 +32,22 @@ export default function HomePage() {
           HERO — 고정 메인 커버 (hero.jpg)
       ════════════════════════════════ */}
       <section className="relative min-h-screen w-full overflow-hidden">
-        {/* 배경 이미지 */}
-        <Image
-          src="/images/hero.jpg"
-          alt="신길온천 Wonder Castle 조감도"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+        {/* 배경 이미지 — Ken Burns 줌인/아웃 */}
+        <motion.div
+          className="absolute inset-0"
+          animate={{ scale: 1.08 }}
+          initial={{ scale: 1 }}
+          transition={{ duration: 18, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
+        >
+          <Image
+            src="/images/hero.jpg"
+            alt="신길온천 Wonder Castle 조감도"
+            fill
+            priority
+            className="object-cover object-center"
+            sizes="100vw"
+          />
+        </motion.div>
         {/* 오버레이 */}
         <div className="absolute inset-0 bg-gradient-to-t from-[#0F1C2E]/85 via-[#0F1C2E]/35 to-[#0F1C2E]/20" />
 
@@ -143,7 +150,8 @@ export default function HomePage() {
             </h2>
           </FadeUp>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* 모바일: 수평 스냅 캐러셀 / 데스크톱: 그리드 */}
+          <div className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {sections.map((s, i) => (
               <motion.div
                 key={s.href}
@@ -169,6 +177,34 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
+
+          {/* 모바일 전용 수평 캐러셀 */}
+          <div className="sm:hidden -mx-6 px-6">
+            <div
+              className="flex gap-4 overflow-x-auto pb-4 snap-x snap-mandatory"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              {sections.map((s) => (
+                <Link
+                  key={s.href}
+                  href={s.href}
+                  className="group flex-shrink-0 w-[72vw] bg-white p-6 rounded shadow-sm border border-transparent active:border-[#C9A96E]/30 snap-start"
+                >
+                  <p className="font-body text-xs text-[#C9A96E] tracking-widest mb-3">{s.label}</p>
+                  <h3 className="font-display font-bold text-lg text-[#0F1C2E] mb-1">{s.title}</h3>
+                  <p className="font-body text-xs text-[#6B7280] mb-3">{s.sub}</p>
+                  <p className="font-body text-sm text-[#6B7280] leading-relaxed">{s.desc}</p>
+                  <div className="mt-4 text-[#C9A96E] text-sm font-body">자세히 보기 →</div>
+                </Link>
+              ))}
+            </div>
+            {/* 스와이프 힌트 점 */}
+            <div className="flex justify-center gap-1.5 mt-2">
+              {sections.map((s) => (
+                <span key={s.href} className="w-1.5 h-1.5 rounded-full bg-[#C9A96E]/30" />
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -178,18 +214,24 @@ export default function HomePage() {
       <section className="bg-[#0F1C2E] py-24 px-6 text-center">
         <FadeUp className="max-w-4xl mx-auto">
           <p
-            className="font-display font-light text-white/90 leading-relaxed mb-8"
+            className="font-display font-bold text-white leading-relaxed mb-8"
             style={{ fontSize: "clamp(1.5rem, 3.5vw, 3rem)", letterSpacing: "-0.02em" }}
           >
             "40년간 잠든 온천 자원 + 초역세권 입지 =
             <br />
-            <span className="text-[#C9A96E] font-semibold">수도권 유일의 미래형 웰니스 랜드마크</span>"
+            <span
+              className="font-extrabold"
+              style={{
+                color: "#C9A96E",
+                textShadow: "0 0 18px rgba(201,169,110,0.8), 0 0 40px rgba(201,169,110,0.5), 0 0 70px rgba(201,169,110,0.25)",
+              }}
+            >수도권 유일의 미래형 웰니스 랜드마크</span>"
           </p>
           <Link
             href="/overview"
             className="inline-block px-10 py-4 border border-[#C9A96E] text-[#C9A96E] font-body text-sm font-bold tracking-widest uppercase hover:bg-[#C9A96E] hover:text-[#0F1C2E] transition-all duration-200"
           >
-            프로젝트 시작하기
+            프로젝트 살펴보기
           </Link>
         </FadeUp>
       </section>
