@@ -112,15 +112,15 @@ export default function Header() {
                   {/* 화살표 */}
                   <div className="w-2.5 h-2.5 bg-[#0F1C2E] border-l border-t border-[#C9A96E]/30 rotate-45 mx-auto -mb-1.5 relative z-10" />
                   {/* 카드 */}
-                  <div className="bg-[#0F1C2E] border border-[#C9A96E]/25 rounded-lg px-4 py-3 w-44 shadow-xl">
-                    <p className="font-body text-[#C9A96E] text-[10px] tracking-widest uppercase mb-2">
+                  <div className="bg-[#0F1C2E] border border-[#C9A96E]/25 rounded-lg px-3 py-2.5 w-36 shadow-xl">
+                    <p className="font-body text-[#C9A96E] text-[11px] tracking-widest uppercase mb-2">
                       {item.desc}
                     </p>
                     <ul className="space-y-1.5">
                       {item.points.map((pt) => (
                         <li key={pt} className="flex items-start gap-1.5">
                           <span className="mt-1.5 w-1 h-1 rounded-full bg-[#C9A96E]/50 flex-shrink-0" />
-                          <span className="font-body text-white/70 text-[11px] leading-snug">{pt}</span>
+                          <span className="font-body text-white/70 text-[13px] leading-snug">{pt}</span>
                         </li>
                       ))}
                     </ul>
