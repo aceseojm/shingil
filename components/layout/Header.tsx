@@ -6,13 +6,48 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const navItems = [
-  { label: "Overview",   href: "/overview" },
-  { label: "Background", href: "/background" },
-  { label: "Location",   href: "/location" },
-  { label: "Vision",     href: "/vision" },
-  { label: "Masterplan", href: "/masterplan" },
-  { label: "Investment", href: "/investment" },
-  { label: "Community",  href: "/conclusion" },
+  {
+    label: "Overview",
+    href: "/overview",
+    desc: "프로젝트 개요",
+    points: ["4대 핵심 전략", "프로젝트 정체성", "핵심 수치"],
+  },
+  {
+    label: "Background",
+    href: "/background",
+    desc: "개발 배경",
+    points: ["왜 지금인가", "40년 온천 자원", "시장 기회"],
+  },
+  {
+    label: "Location",
+    href: "/location",
+    desc: "입지 경쟁력",
+    points: ["신길온천역 직결", "수도권 초역세권", "경쟁 입지 비교"],
+  },
+  {
+    label: "Vision",
+    href: "/vision",
+    desc: "비전 & 콘셉트",
+    points: ["미래형 웰니스 도시", "K-Wellness 랜드마크", "친환경 설계"],
+  },
+  {
+    label: "Masterplan",
+    href: "/masterplan",
+    desc: "마스터플랜",
+    points: ["Zone A·B·C·D 구성", "Twin Tower 랜드마크", "3단계 개발 로드맵"],
+  },
+  {
+    label: "Investment",
+    href: "/investment",
+    desc: "투자 구조",
+    points: ["복합 수익 모델", "투자 하이라이트", "리스크 관리"],
+  },
+  {
+    label: "Community",
+    href: "/conclusion",
+    desc: "커뮤니티 & 문의",
+    points: ["투자 문의", "프로젝트 참여", "연락처"],
+  },
 ];
 
 export default function Header() {
@@ -29,7 +64,6 @@ export default function Header() {
 
   useEffect(() => setMenuOpen(false), [pathname]);
 
-  /* 홈 최상단 → 투명 / 그 외 → 항상 solid */
   const showBar = !isHome || scrolled || menuOpen;
 
   return (
@@ -37,19 +71,16 @@ export default function Header() {
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           showBar
-            /* 서브페이지·스크롤: 차콜 다크 — 네이비 본문과 구분 */
             ? "bg-[#0F1C2E] shadow-[0_2px_20px_rgba(0,0,0,0.5)]"
             : "bg-transparent"
         }`}
       >
-        {/* 하단 골드 라인 — 항상 표시 */}
         {showBar && (
           <div className="h-[2px] w-full bg-gradient-to-r from-[#C9A96E]/0 via-[#C9A96E] to-[#C9A96E]/0" />
         )}
 
         <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
 
-          {/* 로고 — 굵고 진하게 */}
           <Link
             href="/"
             className="font-display font-extrabold text-white text-lg tracking-widest uppercase hover:text-[#C9A96E] transition-colors shrink-0"
@@ -61,19 +92,41 @@ export default function Header() {
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-5">
             {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`relative font-body font-extrabold text-xs tracking-widest uppercase transition-all duration-200 whitespace-nowrap
-                  after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:bg-[#C9A96E]
-                  after:transition-all after:duration-300
-                  ${pathname === item.href
-                    ? "text-[#C9A96E] after:w-full"
-                    : "text-white hover:text-[#C9A96E] after:w-0 hover:after:w-full"
-                  }`}
-              >
-                {item.label}
-              </Link>
+              <div key={item.href} className="relative group">
+                {/* 링크 */}
+                <Link
+                  href={item.href}
+                  className={`relative font-body font-extrabold text-xs tracking-widest uppercase transition-all duration-200 whitespace-nowrap block py-1
+                    after:absolute after:bottom-[-3px] after:left-0 after:h-[2px] after:bg-[#C9A96E]
+                    after:transition-all after:duration-300
+                    ${pathname === item.href
+                      ? "text-[#C9A96E] after:w-full"
+                      : "text-white hover:text-[#C9A96E] after:w-0 hover:after:w-full"
+                    }`}
+                >
+                  {item.label}
+                </Link>
+
+                {/* 호버 드롭다운 */}
+                <div className="absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-200 translate-y-1 group-hover:translate-y-0">
+                  {/* 화살표 */}
+                  <div className="w-2.5 h-2.5 bg-[#0F1C2E] border-l border-t border-[#C9A96E]/30 rotate-45 mx-auto -mb-1.5 relative z-10" />
+                  {/* 카드 */}
+                  <div className="bg-[#0F1C2E] border border-[#C9A96E]/25 rounded-lg px-4 py-3 w-44 shadow-xl">
+                    <p className="font-body text-[#C9A96E] text-[10px] tracking-widest uppercase mb-2">
+                      {item.desc}
+                    </p>
+                    <ul className="space-y-1.5">
+                      {item.points.map((pt) => (
+                        <li key={pt} className="flex items-start gap-1.5">
+                          <span className="mt-1.5 w-1 h-1 rounded-full bg-[#C9A96E]/50 flex-shrink-0" />
+                          <span className="font-body text-white/70 text-[11px] leading-snug">{pt}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
             ))}
           </nav>
 
@@ -91,14 +144,12 @@ export default function Header() {
       {/* 모바일 풀스크린 오버레이 */}
       {menuOpen && (
         <div className="fixed inset-0 z-40 bg-[#0F1C2E] flex flex-col justify-center px-10 gap-0">
-          {/* 로고 라인 */}
           <div className="mb-10 pb-6 border-b border-white/10">
             <span className="font-display font-extrabold text-white text-base tracking-widest uppercase">
               The Wonder Castle
             </span>
           </div>
 
-          {/* 메뉴 항목 — 좌측 정렬 */}
           <nav className="flex flex-col gap-1">
             {navItems.map((item, i) => (
               <Link
@@ -111,9 +162,12 @@ export default function Header() {
                 <span className="font-body text-xs text-white/30 w-5 tabular-nums">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="font-display font-bold text-2xl tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-200">
-                  {item.label}
-                </span>
+                <div>
+                  <span className="font-display font-bold text-2xl tracking-widest uppercase group-hover:translate-x-1 transition-transform duration-200 block">
+                    {item.label}
+                  </span>
+                  <span className="font-body text-xs text-white/30 tracking-wide">{item.desc}</span>
+                </div>
               </Link>
             ))}
           </nav>
