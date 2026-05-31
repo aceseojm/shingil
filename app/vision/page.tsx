@@ -86,11 +86,11 @@ export default function VisionPage() {
               <FadeUp key={m.title} delay={i * 0.1}>
                 <div className="bg-white p-8 rounded shadow-sm hover:-translate-y-1 hover:shadow-md transition-all group">
                   <div className="mb-4">{m.icon}</div>
-                  <p className="font-body text-xs text-[#6B7280] tracking-widest mb-2">{m.sub}</p>
+                  <p className="font-body text-xs text-[#0F1C2E]/50 tracking-widest mb-2">{m.sub}</p>
                   <h3 className="font-section text-2xl text-[#0F1C2E] mb-3 group-hover:text-[#C9A96E] transition-colors">
                     {m.title}
                   </h3>
-                  <p className="font-body text-[#6B7280] leading-relaxed">{m.desc}</p>
+                  <p className="font-body text-[#0F1C2E]/50 leading-relaxed">{m.desc}</p>
                 </div>
               </FadeUp>
             ))}

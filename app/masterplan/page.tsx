@@ -153,7 +153,7 @@ export default function MasterplanPage() {
                     className={`py-2 rounded text-xs font-body font-bold tracking-widest transition-all duration-200 ${
                       active === c.id
                         ? "text-[#0F1C2E]"
-                        : "bg-white/60 text-[#6B7280] hover:bg-white"
+                        : "bg-white/60 text-[#0F1C2E]/50 hover:bg-white"
                     }`}
                     style={active === c.id ? { backgroundColor: c.color } : {}}
                   >
@@ -176,20 +176,20 @@ export default function MasterplanPage() {
                       >
                         {current.tag}
                       </span>
-                      <span className="font-body text-xs text-[#6B7280]">{current.floors}</span>
+                      <span className="font-body text-xs text-[#0F1C2E]/50">{current.floors}</span>
                     </div>
                     <h3 className="font-display font-black text-[#0F1C2E]"
                       style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)" }}>
                       {current.name}
                     </h3>
-                    <p className="font-body text-xs text-[#6B7280] mt-0.5">{current.en}</p>
+                    <p className="font-body text-xs text-[#0F1C2E]/50 mt-0.5">{current.en}</p>
                   </div>
-                  <span className="font-body text-xs text-[#6B7280] bg-[#F8F6F2] px-3 py-1 rounded">
+                  <span className="font-body text-xs text-[#0F1C2E]/50 bg-[#F8F6F2] px-3 py-1 rounded">
                     {current.area}
                   </span>
                 </div>
 
-                <p className="font-body text-[#6B7280] text-sm leading-relaxed mb-4">
+                <p className="font-body text-[#0F1C2E]/50 text-sm leading-relaxed mb-4">
                   {current.desc}
                 </p>
 
@@ -222,7 +222,7 @@ export default function MasterplanPage() {
                     <p className="font-body text-xs font-bold tracking-widest mb-0.5"
                       style={{ color: c.color }}>{c.zone}</p>
                     <p className="font-display font-semibold text-sm text-[#0F1C2E] leading-tight">{c.name}</p>
-                    <p className="font-body text-xs text-[#6B7280] mt-0.5">{c.floors}</p>
+                    <p className="font-body text-xs text-[#0F1C2E]/50 mt-0.5">{c.floors}</p>
                   </button>
                 ))}
               </div>

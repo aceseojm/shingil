@@ -88,7 +88,7 @@ export default function ConclusionPage() {
                   <h3 className="font-section text-xl text-[#0F1C2E] mb-3 group-hover:text-[#C9A96E] transition-colors">
                     {c.title}
                   </h3>
-                  <p className="font-body text-[#6B7280] text-sm leading-relaxed">{c.desc}</p>
+                  <p className="font-body text-[#0F1C2E]/50 text-sm leading-relaxed">{c.desc}</p>
                 </div>
               </FadeUp>
             ))}
@@ -132,10 +132,10 @@ export default function ConclusionPage() {
               <h2 className="font-section text-5xl text-[#0F1C2E] mb-6">
                 함께<br />시작합니다.
               </h2>
-              <p className="font-body text-[#6B7280] leading-relaxed mb-2 font-semibold">
+              <p className="font-body text-[#0F1C2E]/50 leading-relaxed mb-2 font-semibold">
                 Sohun Development Co., LTD.
               </p>
-              <p className="font-body text-[#6B7280] leading-relaxed mb-8 max-w-md">
+              <p className="font-body text-[#0F1C2E]/50 leading-relaxed mb-8 max-w-md">
                 투자 문의, 협력 제안, 기관 협의 등 어떤 형태의 참여도 환영합니다. 신길온천 Wonder Castle과 함께 수도권 최고의 웰니스 랜드마크를 만들어가세요.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">

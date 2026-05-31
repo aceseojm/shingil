@@ -53,7 +53,7 @@ export default function StatCounter({ value, label, prefix = "", suffix = "" }: 
       <div className="font-display text-4xl md:text-5xl text-[#C9A96E] font-light">
         {prefix}{displayed}{suffix}
       </div>
-      <div className="font-body text-sm text-[#6B7280] mt-2 tracking-wide">{label}</div>
+      <div className="font-body text-sm text-[#0F1C2E]/50 mt-2 tracking-wide">{label}</div>
     </div>
   );
 }

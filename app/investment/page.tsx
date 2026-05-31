@@ -85,7 +85,7 @@ export default function InvestmentPage() {
                   <h3 className="font-section text-xl text-[#0F1C2E] mb-3 group-hover:text-[#C9A96E] transition-colors">
                     {h.title}
                   </h3>
-                  <p className="font-body text-[#6B7280] leading-relaxed text-sm">{h.desc}</p>
+                  <p className="font-body text-[#0F1C2E]/50 leading-relaxed text-sm">{h.desc}</p>
                 </div>
               </FadeUp>
             ))}
@@ -163,7 +163,7 @@ export default function InvestmentPage() {
                   </div>
                   <div className="flex-1 border-l border-[#F8F6F2] pl-6">
                     <p className="font-body text-xs text-[#C9A96E] tracking-widest mb-1">대응 전략</p>
-                    <p className="font-body text-[#6B7280] text-sm leading-relaxed">{r.mitigation}</p>
+                    <p className="font-body text-[#0F1C2E]/50 text-sm leading-relaxed">{r.mitigation}</p>
                   </div>
                 </div>
               </FadeUp>

@@ -38,7 +38,7 @@ export default function Header() {
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           showBar
             /* 서브페이지·스크롤: 차콜 다크 — 네이비 본문과 구분 */
-            ? "bg-[#1B2535] shadow-[0_2px_20px_rgba(0,0,0,0.5)]"
+            ? "bg-[#0F1C2E] shadow-[0_2px_20px_rgba(0,0,0,0.5)]"
             : "bg-transparent"
         }`}
       >
@@ -90,7 +90,7 @@ export default function Header() {
 
       {/* 모바일 풀스크린 오버레이 */}
       {menuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#1B2535] flex flex-col justify-center px-10 gap-0">
+        <div className="fixed inset-0 z-40 bg-[#0F1C2E] flex flex-col justify-center px-10 gap-0">
           {/* 로고 라인 */}
           <div className="mb-10 pb-6 border-b border-white/10">
             <span className="font-display font-extrabold text-white text-base tracking-widest uppercase">

@@ -89,7 +89,7 @@ export default function BackgroundPage() {
                     <h3 className="font-section text-xl text-[#0F1C2E] mb-3 group-hover:text-[#C9A96E] transition-colors">
                       {b.title}
                     </h3>
-                    <p className="font-body text-[#6B7280] leading-relaxed">{b.desc}</p>
+                    <p className="font-body text-[#0F1C2E]/50 leading-relaxed">{b.desc}</p>
                   </div>
                 </div>
               </FadeUp>

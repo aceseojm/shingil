@@ -43,7 +43,7 @@ export default function LocationPage() {
             <NaverMap />
           </FadeUp>
           <FadeUp delay={0.15}>
-            <div className="mt-4 flex flex-wrap gap-6 text-sm font-body text-[#6B7280]">
+            <div className="mt-4 flex flex-wrap gap-6 text-sm font-body text-[#0F1C2E]/50">
               <span>📍 경기도 안산시 단원구 신길동 일원</span>
               <span>🚇 수도권 전철 4호선 신길온천역 직결</span>
             </div>
@@ -91,15 +91,15 @@ export default function LocationPage() {
                       key={c.name}
                       className={`border-b border-[#F8F6F2] ${i === 0 ? "bg-[#C9A96E]/10" : ""}`}
                     >
-                      <td className={`p-4 font-body text-sm ${i === 0 ? "text-[#0F1C2E] font-medium" : "text-[#6B7280]"}`}>
+                      <td className={`p-4 font-body text-sm ${i === 0 ? "text-[#0F1C2E] font-medium" : "text-[#0F1C2E]/50"}`}>
                         {c.name}
                       </td>
-                      <td className="p-4 font-body text-sm text-[#6B7280]">{c.visitors}</td>
-                      <td className="p-4 font-body text-sm text-[#6B7280]">{c.size}</td>
-                      <td className="p-4 font-body text-sm text-[#6B7280]">{c.access}</td>
+                      <td className="p-4 font-body text-sm text-[#0F1C2E]/50">{c.visitors}</td>
+                      <td className="p-4 font-body text-sm text-[#0F1C2E]/50">{c.size}</td>
+                      <td className="p-4 font-body text-sm text-[#0F1C2E]/50">{c.access}</td>
                       <td className="p-4">
                         <span className={`font-body text-xs px-2 py-1 rounded ${
-                          c.note === "계획" ? "bg-[#C9A96E]/20 text-[#C9A96E]" : "bg-[#6B7280]/10 text-[#6B7280]"
+                          c.note === "계획" ? "bg-[#C9A96E]/20 text-[#C9A96E]" : "bg-[#6B7280]/10 text-[#0F1C2E]/50"
                         }`}>
                           {c.note}
                         </span>

@@ -26,7 +26,7 @@ export default function PageNav({ current }: PageNavProps) {
         {prev ? (
           <Link
             href={prev.href}
-            className="flex items-center gap-2 font-body font-bold text-sm text-[#6B7280] hover:text-[#0F1C2E] transition-colors group"
+            className="flex items-center gap-2 font-body font-bold text-sm text-[#0F1C2E]/50 hover:text-[#0F1C2E] transition-colors group"
           >
             <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
             <span className="tracking-widest uppercase">{prev.label}</span>
@@ -43,7 +43,7 @@ export default function PageNav({ current }: PageNavProps) {
         {next ? (
           <Link
             href={next.href}
-            className="flex items-center gap-2 font-body font-bold text-sm text-[#6B7280] hover:text-[#0F1C2E] transition-colors group"
+            className="flex items-center gap-2 font-body font-bold text-sm text-[#0F1C2E]/50 hover:text-[#0F1C2E] transition-colors group"
           >
             <span className="tracking-widest uppercase">{next.label}</span>
             <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />

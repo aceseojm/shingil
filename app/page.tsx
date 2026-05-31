@@ -168,8 +168,8 @@ export default function HomePage() {
                   <h3 className="font-display font-bold text-lg text-[#0F1C2E] mb-1 group-hover:text-[#C9A96E] transition-colors">
                     {s.title}
                   </h3>
-                  <p className="font-body text-xs text-[#6B7280] mb-3">{s.sub}</p>
-                  <p className="font-body text-sm text-[#6B7280] leading-relaxed">{s.desc}</p>
+                  <p className="font-body text-xs text-[#0F1C2E]/50 mb-3">{s.sub}</p>
+                  <p className="font-body text-sm text-[#0F1C2E]/50 leading-relaxed">{s.desc}</p>
                   <div className="mt-4 text-[#C9A96E] text-sm font-body opacity-0 group-hover:opacity-100 transition-opacity">
                     자세히 보기 →
                   </div>
@@ -192,8 +192,8 @@ export default function HomePage() {
                 >
                   <p className="font-body text-xs text-[#C9A96E] tracking-widest mb-3">{s.label}</p>
                   <h3 className="font-display font-bold text-lg text-[#0F1C2E] mb-1">{s.title}</h3>
-                  <p className="font-body text-xs text-[#6B7280] mb-3">{s.sub}</p>
-                  <p className="font-body text-sm text-[#6B7280] leading-relaxed">{s.desc}</p>
+                  <p className="font-body text-xs text-[#0F1C2E]/50 mb-3">{s.sub}</p>
+                  <p className="font-body text-sm text-[#0F1C2E]/50 leading-relaxed">{s.desc}</p>
                   <div className="mt-4 text-[#C9A96E] text-sm font-body">자세히 보기 →</div>
                 </Link>
               ))}

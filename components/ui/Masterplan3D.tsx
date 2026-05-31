@@ -104,7 +104,7 @@ export default function Masterplan3D({ active, onZoneClick }: Props) {
   return (
     <svg viewBox="0 0 660 560" className="w-full select-none" style={{ display: "block" }}>
       {/* Background */}
-      <rect width="660" height="560" fill="#0B1426" rx="12" />
+      <rect width="660" height="560" fill="#0F1C2E" rx="12" />
 
       {/* Subtle star dots */}
       {[...Array(25)].map((_, i) => (

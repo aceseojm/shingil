@@ -87,14 +87,14 @@ export default function BenchmarkPage() {
 
                   {/* 텍스트 */}
                   <div className="p-7 flex-1 flex flex-col justify-center">
-                    <p className="font-body text-xs text-[#6B7280] tracking-widest mb-1">{c.city}</p>
+                    <p className="font-body text-xs text-[#0F1C2E]/50 tracking-widest mb-1">{c.city}</p>
                     <h3
                       className="font-display font-bold text-[#0F1C2E] mb-3 group-hover:transition-colors"
                       style={{ fontSize: "clamp(1.1rem, 2vw, 1.5rem)" }}
                     >
                       {c.name}
                     </h3>
-                    <p className="font-body text-[#6B7280] text-sm leading-relaxed mb-4">{c.desc}</p>
+                    <p className="font-body text-[#0F1C2E]/50 text-sm leading-relaxed mb-4">{c.desc}</p>
                     <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded self-start" style={{ backgroundColor: `${c.color}18` }}>
                       <span className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ backgroundColor: c.color }} />
                       <p className="font-body text-xs font-semibold" style={{ color: c.color }}>{c.highlight}</p>
