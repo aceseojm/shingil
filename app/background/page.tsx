@@ -39,13 +39,102 @@ const backgrounds = [
   },
 ];
 
-const timeline = [
-  { year: "1980s", event: "신길 지역 온천 자원 최초 확인" },
-  { year: "1990s", event: "개발 논의 시작 — 수차례 계획 수립 후 무산" },
-  { year: "2000s", event: "신길온천역 개통 (4호선), 역세권 개발 기대 고조" },
-  { year: "2010s", event: "개발 시도 반복 — 인허가·자금 조달 난항으로 표류" },
-  { year: "2020s", event: "웰니스 시장 성장 + 규제 완화 = 최적의 개발 시점 도래" },
-  { year: "2026", event: "The Wonder Castle 프로젝트 공식 제안" },
+const roleColors = {
+  안산시: {
+    accent: "#C9A96E",
+    bg: "rgba(201,169,110,0.07)",
+    border: "rgba(201,169,110,0.25)",
+    tag: "rgba(201,169,110,0.15)",
+  },
+  온천발견자: {
+    accent: "#4ECDC4",
+    bg: "rgba(78,205,196,0.07)",
+    border: "rgba(78,205,196,0.25)",
+    tag: "rgba(78,205,196,0.15)",
+  },
+};
+
+type EventItem = { title: string; desc: string; highlight?: boolean };
+
+const yearGroups: Array<{ year: number; 안산시: EventItem[]; 온천발견자: EventItem[] }> = [
+  {
+    year: 1982,
+    안산시: [{ title: "굴착 허가 후 온천발견 신고수리 거부", desc: "안산시(시흥군)에 굴착 허가 및 온천수 발견. 안산시 온천발견 신고수리 거부" }],
+    온천발견자: [{ title: "토지주와 공동사업약정 및 굴착 투자", desc: "토지주와 토지분할 공동사업약정, 토지 지장물 3년치 보상. 굴착하가 후 당시 약 32억 투자 (면적 약 98,000평)" }],
+  },
+  {
+    year: 1985,
+    안산시: [{ title: "신길온천 토지 수자원공사 수용", desc: "신길온천 토지가 수자원공사에 의해 수용됨" }],
+    온천발견자: [],
+  },
+  {
+    year: 1988,
+    안산시: [],
+    온천발견자: [{ title: "대법원 온천발견자 승소", desc: "신길온천 발견신고수리 거부 부당판결 — 대법원에서 온천발견자 승소" }],
+  },
+  {
+    year: 1992,
+    안산시: [{
+      title: "온천발견 신고수리 — 온천개발 법적 의무 발생",
+      desc: "법률적·행정적으로 온천개발의무 토지가 됨. 안산시의 온천 지구지정 및 개발계획수립 법적 의무 발생 — 2026년 현재까지 미이행",
+      highlight: true,
+    }],
+    온천발견자: [],
+  },
+  {
+    year: 1993,
+    안산시: [],
+    온천발견자: [{ title: "수자원공사로부터 사업토지 매수 완료", desc: "안산시 온천개발을 위해 수자원공사로부터 본 사업토지매수 완료" }],
+  },
+  {
+    year: 1998,
+    안산시: [],
+    온천발견자: [{ title: "정창술 박사 타계 — 상속자 관리승계", desc: "12월 온천발견자 정창술 박사 타계. 상속자들 관리승계" }],
+  },
+  {
+    year: 2000,
+    안산시: [{ title: "지하철 4호선 신길온천역 개통", desc: "수도권 전철 4호선 신길온천역으로 역명 지정 및 개통" }],
+    온천발견자: [],
+  },
+  {
+    year: 2005,
+    안산시: [],
+    온천발견자: [{ title: "국토부와 협의 → 국민임대주택 해제", desc: "국토부와 발견자 간 상호협의로 국민임대주택 지정 해제" }],
+  },
+  {
+    year: 2006,
+    안산시: [{ title: "국토부 → 국민임대주택 지정", desc: "국토부로부터 신길온천 부지 국민임대주택 지정" }],
+    온천발견자: [],
+  },
+  {
+    year: 2016,
+    안산시: [],
+    온천발견자: [{ title: "국민권익위원회 상속인정 및 온천개발구 의결", desc: "국민권익위원회 상속인정과 온천개발구 의결" }],
+  },
+  {
+    year: 2020,
+    안산시: [],
+    온천발견자: [{ title: "경기도 행정심판 — 지위승계 인정 승소", desc: "경기도 행정심판위원회 온천발견자 지위승계 인정(승소)" }],
+  },
+  {
+    year: 2023,
+    안산시: [{ title: "소송 및 온천개발협의 진행 중", desc: "안산시와 소송 및 온천개발협의 진행 중" }],
+    온천발견자: [{ title: "집행정지 가처분 2건 승소", desc: "온천공 원상회복 소송에서 2건의 집행정지 가처분 승소" }],
+  },
+  {
+    year: 2024,
+    안산시: [{ title: "대법원 — 온천발견자 승소 2, 패소 1", desc: "대법원 처분사유 중, 온천발견자 승소 2 패소 1", highlight: true }],
+    온천발견자: [],
+  },
+  {
+    year: 2025,
+    안산시: [],
+    온천발견자: [{
+      title: "온천공 원상회복 소송 집행정지 가처분 2건 승소",
+      desc: "온천발견자 측 온천공 원상회복 소송에서 2건의 집행정지 가처분 승소. 신길온천부지 소송 종료로 온천개발 본래 용도로의 개발 재개 동기 확보",
+      highlight: true,
+    }],
+  },
 ];
 
 export default function BackgroundPage() {
@@ -100,40 +189,115 @@ export default function BackgroundPage() {
 
       {/* Timeline */}
       <section className="py-20 px-6 bg-[#0F1C2E]">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-4">
               Development History
             </p>
-            <h2 className="font-section text-4xl text-white mb-16">40년 개발 연혁</h2>
+            <h2 className="font-section text-4xl text-white mb-3">40년 개발 연혁</h2>
+            <p className="font-body text-sm text-white/40 mb-12">신길온천 추진현황 — 사실에 입각한 기록</p>
           </FadeUp>
 
+          {/* 역할 범례 */}
+          <FadeUp delay={0.05}>
+            <div className="flex gap-6 mb-14">
+              {(["안산시", "온천발견자"] as const).map((role) => (
+                <div key={role} className="flex items-center gap-2">
+                  <span className="w-3 h-3 rounded-full flex-shrink-0" style={{ backgroundColor: roleColors[role].accent }} />
+                  <span className="font-body text-sm font-bold" style={{ color: roleColors[role].accent }}>{role}</span>
+                </div>
+              ))}
+            </div>
+          </FadeUp>
+
+          {/* 두 줄 타임라인 */}
           <div className="relative">
-            <div className="absolute left-[88px] md:left-1/2 top-0 bottom-0 w-px bg-[#C9A96E]/20" />
-            <div className="space-y-10">
-              {timeline.map((t, i) => (
-                <FadeUp key={t.year} delay={i * 0.1}>
-                  <div className={`flex items-start gap-6 md:gap-0 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
-                    <div className={`hidden md:block w-1/2 ${i % 2 === 0 ? "pr-12 text-right" : "pl-12 text-left"}`}>
-                      {i % 2 === 0 ? (
-                        <p className="font-body text-white/70 text-base">{t.event}</p>
-                      ) : (
-                        <p className="font-display text-3xl text-[#C9A96E]">{t.year}</p>
-                      )}
+            {/* 중앙 세로선 (데스크탑) */}
+            <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2" />
+
+            <div className="space-y-6">
+              {yearGroups.map((group, gi) => (
+                <FadeUp key={group.year} delay={gi * 0.05}>
+                  {/* 데스크탑: 좌(안산시) | 연도 | 우(온천발견자) */}
+                  <div className="hidden md:grid grid-cols-[1fr_64px_1fr] items-start gap-0">
+                    {/* 안산시 (left, right-aligned) */}
+                    <div className="pr-8 flex justify-end">
+                      {group.안산시.length > 0 ? (
+                        <div
+                          className="p-4 rounded-lg border max-w-sm w-full"
+                          style={{
+                            backgroundColor: group.안산시[0].highlight ? "rgba(232,137,60,0.14)" : roleColors.안산시.bg,
+                            borderColor: roleColors.안산시.border,
+                          }}
+                        >
+                          <div className="flex items-center justify-end gap-2 mb-1.5 flex-wrap">
+                            <p className="font-body text-sm font-semibold text-white/90 text-right">{group.안산시[0].title}</p>
+                            <span className="font-body text-[10px] px-2 py-0.5 rounded font-bold flex-shrink-0"
+                              style={{ backgroundColor: roleColors.안산시.tag, color: roleColors.안산시.accent }}>
+                              안산시
+                            </span>
+                          </div>
+                          <p className="font-body text-xs text-white/45 leading-relaxed text-right">{group.안산시[0].desc}</p>
+                        </div>
+                      ) : <div />}
                     </div>
-                    <div className="relative flex-shrink-0 z-10">
-                      <div className="w-4 h-4 rounded-full bg-[#C9A96E] border-4 border-[#0F1C2E]" />
+
+                    {/* 연도 (center) */}
+                    <div className="flex flex-col items-center pt-3 flex-shrink-0">
+                      <div className="w-14 h-14 rounded-full bg-[#0F1C2E] border border-white/20 flex items-center justify-center z-10">
+                        <span className="font-body text-[11px] text-white/55 font-bold leading-tight text-center">{group.year}</span>
+                      </div>
                     </div>
-                    <div className={`hidden md:block w-1/2 ${i % 2 === 0 ? "pl-12" : "pr-12 text-right"}`}>
-                      {i % 2 !== 0 ? (
-                        <p className="font-body text-white/70 text-base">{t.event}</p>
-                      ) : (
-                        <p className="font-display text-3xl text-[#C9A96E]">{t.year}</p>
-                      )}
+
+                    {/* 온천발견자 (right) */}
+                    <div className="pl-8">
+                      {group.온천발견자.length > 0 ? (
+                        <div
+                          className="p-4 rounded-lg border max-w-sm w-full"
+                          style={{
+                            backgroundColor: group.온천발견자[0].highlight ? "rgba(74,158,214,0.15)" : roleColors.온천발견자.bg,
+                            borderColor: roleColors.온천발견자.border,
+                          }}
+                        >
+                          <div className="flex items-center gap-2 mb-1.5 flex-wrap">
+                            <span className="font-body text-[10px] px-2 py-0.5 rounded font-bold flex-shrink-0"
+                              style={{ backgroundColor: roleColors.온천발견자.tag, color: roleColors.온천발견자.accent }}>
+                              온천발견자
+                            </span>
+                            <p className="font-body text-sm font-semibold text-white/90">{group.온천발견자[0].title}</p>
+                          </div>
+                          <p className="font-body text-xs text-white/45 leading-relaxed">{group.온천발견자[0].desc}</p>
+                        </div>
+                      ) : <div />}
                     </div>
-                    <div className="md:hidden">
-                      <p className="font-display text-2xl text-[#C9A96E]">{t.year}</p>
-                      <p className="font-body text-white/70 text-sm mt-1">{t.event}</p>
+                  </div>
+
+                  {/* 모바일: 세로 쌓기 */}
+                  <div className="md:hidden">
+                    <div className="font-body text-base font-bold text-white/30 mb-3">{group.year}</div>
+                    <div className="space-y-2 pl-4 border-l-2 border-white/10">
+                      {group.안산시.map((ev) => (
+                        <div key={ev.title} className="p-3 rounded-lg border"
+                          style={{ backgroundColor: roleColors.안산시.bg, borderColor: roleColors.안산시.border }}>
+                          <span className="font-body text-[10px] px-2 py-0.5 rounded font-bold mb-1.5 inline-block"
+                            style={{ backgroundColor: roleColors.안산시.tag, color: roleColors.안산시.accent }}>
+                            안산시
+                          </span>
+                          <p className="font-body text-sm font-semibold text-white/90 mb-1">{ev.title}</p>
+                          <p className="font-body text-xs text-white/45 leading-relaxed">{ev.desc}</p>
+                        </div>
+                      ))}
+                      {group.온천발견자.map((ev) => (
+                        <div key={ev.title} className="p-3 rounded-lg border"
+                          style={{ backgroundColor: roleColors.온천발견자.bg, borderColor: roleColors.온천발견자.border }}>
+                          <span className="font-body text-[10px] px-2 py-0.5 rounded font-bold mb-1.5 inline-block"
+                            style={{ backgroundColor: roleColors.온천발견자.tag, color: roleColors.온천발견자.accent }}>
+                            온천발견자
+                          </span>
+                          <p className="font-body text-sm font-semibold text-white/90 mb-1">{ev.title}</p>
+                          <p className="font-body text-xs text-white/45 leading-relaxed">{ev.desc}</p>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </FadeUp>
