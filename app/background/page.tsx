@@ -161,7 +161,7 @@ export default function BackgroundPage() {
       </section>
 
       {/* 5 Backgrounds */}
-      <section className="py-20 px-6">
+      <section id="why-now" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-10">
@@ -188,7 +188,7 @@ export default function BackgroundPage() {
       </section>
 
       {/* Timeline */}
-      <section className="py-20 px-6 bg-[#0F1C2E]">
+      <section id="history" className="py-20 px-6 bg-[#0F1C2E]">
         <div className="max-w-6xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-4">

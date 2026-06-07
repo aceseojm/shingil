@@ -32,7 +32,7 @@ export default function LocationPage() {
       />
 
       {/* Naver Map */}
-      <section className="py-20 px-6">
+      <section id="map" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-6">
@@ -52,7 +52,7 @@ export default function LocationPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-16 px-6 bg-[#0F1C2E]">
+      <section id="stats" className="py-16 px-6 bg-[#0F1C2E]">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
           {stats.map((s, i) => (
             <FadeUp key={s.label} delay={i * 0.1}>
@@ -63,7 +63,7 @@ export default function LocationPage() {
       </section>
 
       {/* Competitive Table */}
-      <section className="py-20 px-6">
+      <section id="comparison" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-4">

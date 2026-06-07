@@ -10,43 +10,66 @@ const navItems = [
     label: "Overview",
     href: "/overview",
     desc: "프로젝트 개요",
-    points: ["4대 핵심 전략", "프로젝트 정체성", "핵심 수치"],
+    points: [
+      { label: "프로젝트 정보", anchor: "info" },
+      { label: "4대 핵심 전략", anchor: "strategy" },
+    ],
   },
   {
     label: "Background",
     href: "/background",
     desc: "개발 배경",
-    points: ["왜 지금인가", "40년 온천 자원", "시장 기회"],
+    points: [
+      { label: "왜 지금인가", anchor: "why-now" },
+      { label: "40년 개발 연혁", anchor: "history" },
+    ],
   },
   {
     label: "Location",
     href: "/location",
     desc: "입지 경쟁력",
-    points: ["신길온천역 직결", "수도권 초역세권", "경쟁 입지 비교"],
+    points: [
+      { label: "신길온천역 직결", anchor: "map" },
+      { label: "수도권 초역세권", anchor: "stats" },
+      { label: "경쟁 입지 비교", anchor: "comparison" },
+    ],
   },
   {
     label: "Vision",
     href: "/vision",
     desc: "비전 & 콘셉트",
-    points: ["미래형 웰니스 도시", "K-Wellness 랜드마크", "친환경 설계"],
+    points: [
+      { label: "4대 도시 모델", anchor: "urban-model" },
+      { label: "K-Wellness 브랜딩", anchor: "kwellness" },
+    ],
   },
   {
     label: "Masterplan",
     href: "/masterplan",
     desc: "마스터플랜",
-    points: ["Zone A·B·C·D 구성", "Twin Tower 랜드마크", "3단계 개발 로드맵"],
+    points: [
+      { label: "Zone A·B·C·D 구성", anchor: "zones" },
+      { label: "연도별 개발 로드맵", anchor: "roadmap" },
+    ],
   },
   {
     label: "Investment",
     href: "/investment",
     desc: "투자 구조",
-    points: ["복합 수익 모델", "투자 하이라이트", "리스크 관리"],
+    points: [
+      { label: "투자 하이라이트", anchor: "highlights" },
+      { label: "수익 모델", anchor: "revenue" },
+      { label: "리스크 관리", anchor: "risk" },
+    ],
   },
   {
     label: "Community",
     href: "/conclusion",
     desc: "커뮤니티 & 문의",
-    points: ["투자 문의", "프로젝트 참여", "연락처"],
+    points: [
+      { label: "프로젝트 참여", anchor: "participation" },
+      { label: "투자 문의", anchor: "contact" },
+    ],
   },
 ];
 
@@ -118,9 +141,14 @@ export default function Header() {
                     </p>
                     <ul className="space-y-1.5">
                       {item.points.map((pt) => (
-                        <li key={pt} className="flex items-start gap-1.5">
-                          <span className="mt-1.5 w-1 h-1 rounded-full bg-[#C9A96E]/50 flex-shrink-0" />
-                          <span className="font-body text-white/70 text-[13px] leading-snug">{pt}</span>
+                        <li key={pt.label}>
+                          <Link
+                            href={`${item.href}#${pt.anchor}`}
+                            className="flex items-start gap-1.5 group/pt hover:text-[#C9A96E] transition-colors"
+                          >
+                            <span className="mt-1.5 w-1 h-1 rounded-full bg-[#C9A96E]/50 flex-shrink-0 group-hover/pt:bg-[#C9A96E] transition-colors" />
+                            <span className="font-body text-white/70 text-[13px] leading-snug group-hover/pt:text-[#C9A96E] transition-colors">{pt.label}</span>
+                          </Link>
                         </li>
                       ))}
                     </ul>

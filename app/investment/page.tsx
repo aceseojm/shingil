@@ -70,7 +70,7 @@ export default function InvestmentPage() {
       />
 
       {/* Investment Highlights */}
-      <section className="py-20 px-6">
+      <section id="highlights" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-10">
@@ -94,7 +94,7 @@ export default function InvestmentPage() {
       </section>
 
       {/* Revenue Model */}
-      <section className="py-20 px-6 bg-[#0F1C2E]">
+      <section id="revenue" className="py-20 px-6 bg-[#0F1C2E]">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-4">
@@ -141,7 +141,7 @@ export default function InvestmentPage() {
       </section>
 
       {/* Risk Matrix */}
-      <section className="py-20 px-6">
+      <section id="risk" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-4">

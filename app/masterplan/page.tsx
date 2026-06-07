@@ -149,7 +149,7 @@ export default function MasterplanPage() {
       />
 
       {/* ── 다이어그램 + 클러스터 ── */}
-      <section className="py-16 px-6">
+      <section id="zones" className="py-16 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-8">
@@ -257,7 +257,7 @@ export default function MasterplanPage() {
       </section>
 
       {/* ── 연도별 타임라인 로드맵 ── */}
-      <section className="py-16 px-6 bg-[#0F1C2E] overflow-hidden">
+      <section id="roadmap" className="py-16 px-6 bg-[#0F1C2E] overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-3">

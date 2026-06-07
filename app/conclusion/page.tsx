@@ -97,7 +97,7 @@ export default function ConclusionPage() {
       </section>
 
       {/* Roadmap */}
-      <section className="py-20 px-6 bg-[#0F1C2E]">
+      <section id="participation" className="py-20 px-6 bg-[#0F1C2E]">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-4">
@@ -122,7 +122,7 @@ export default function ConclusionPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 px-6">
+      <section id="contact" className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col lg:flex-row gap-16 items-start">
             <FadeUp className="flex-1">

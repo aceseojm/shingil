@@ -53,7 +53,7 @@ export default function OverviewPage() {
       />
 
       {/* Info Cards */}
-      <section className="py-20 px-6">
+      <section id="info" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-8">
@@ -74,7 +74,7 @@ export default function OverviewPage() {
       </section>
 
       {/* 4 Strategies */}
-      <section className="py-20 px-6 bg-[#0F1C2E]">
+      <section id="strategy" className="py-20 px-6 bg-[#0F1C2E]">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-4">

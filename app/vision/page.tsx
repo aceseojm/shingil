@@ -73,7 +73,7 @@ export default function VisionPage() {
       </section>
 
       {/* 4 Urban Models */}
-      <section className="py-20 px-6">
+      <section id="urban-model" className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <FadeUp>
             <p className="font-body text-xs text-[#C9A96E] tracking-[0.3em] uppercase mb-4">
@@ -99,7 +99,7 @@ export default function VisionPage() {
       </section>
 
       {/* K-Wellness Brand */}
-      <section className="py-20 px-6 bg-[#0F1C2E]">
+      <section id="kwellness" className="py-20 px-6 bg-[#0F1C2E]">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row gap-16 items-center">
             <FadeUp className="flex-1">
